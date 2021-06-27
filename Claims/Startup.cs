@@ -30,6 +30,9 @@ namespace Claims
             services.AddAuthentication("MrCookiesAuth").AddCookie("MrCookiesAuth",
              options => { options.Cookie.Name = "MrCookiesAuth";
                  options.LoginPath = "/Login";
+                 // options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+                  //options.Cookie.Name = "MrCookiesAuth";
+                  //options.AccessDeniedPath = "/Login";
              });// add this after error 
 
             services.AddAuthorization(policy =>
