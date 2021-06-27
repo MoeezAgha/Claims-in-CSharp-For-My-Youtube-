@@ -41,6 +41,12 @@ namespace Claims.Pages
 
                 var identity = new ClaimsIdentity(claims, cookieName);
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
+
+                //RememberMe
+                //var authProperties = new AuthenticationProperties();
+                //authProperties.IsPersistent = Credential.RememberMe;
+                //await HttpContext.SignInAsync(cookieName, claimsPrincipal,authProperties);
+
                 await  HttpContext.SignInAsync(cookieName, claimsPrincipal);
 
                 return RedirectToPage("/Index");
@@ -66,6 +72,8 @@ namespace Claims.Pages
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
+        public bool RememberMe { get; set; } //after
 
 
     }
