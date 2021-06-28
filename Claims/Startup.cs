@@ -40,6 +40,7 @@ namespace Claims
                 policy.AddPolicy("MustHaveAgha",
                     policy => policy.RequireClaim("Department", "HR"));
             });
+      
             services.AddRazorPages();
       
         }

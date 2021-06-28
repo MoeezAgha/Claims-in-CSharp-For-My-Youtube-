@@ -33,15 +33,18 @@ namespace Claims.Pages
                var claims = new List<Claim> {
                new Claim(ClaimTypes.Name, "admin"),
                new Claim(ClaimTypes.Email, "admin@moeez.com"),
-               new Claim("Department", "HR")
+               new Claim("Department", "HR"),
+                  new Claim(ClaimTypes.Role, "ddagha")
 
                };
+                
               
                 //MustHaveAgha
 
                 var identity = new ClaimsIdentity(claims, cookieName);
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
+              
                 //RememberMe
                 //var authProperties = new AuthenticationProperties();
                 //authProperties.IsPersistent = Credential.RememberMe;

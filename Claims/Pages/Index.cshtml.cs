@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 namespace Claims.Pages
 {
     [Authorize(Policy = "MustHaveAgha")]
+    [Authorize(Roles = "agha")]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
